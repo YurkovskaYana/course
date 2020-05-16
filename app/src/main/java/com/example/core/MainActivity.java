@@ -14,4 +14,5 @@ public class MainActivity extends AppCompatActivity {
     public static void p(){}
     public static void g(){}
     public static void gr(){}
+    public static void gtr(){}
 }
