@@ -17,24 +17,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public static void p(){}
-    public static void g(){}
-    public static void gr(){}
 
-    @Override
-    public boolean dispatchGenericMotionEvent(MotionEvent ev) {
-        return super.dispatchGenericMotionEvent(ev);
-    }
-
-    @Override
-    public boolean bindIsolatedService(Intent service, int flags, String instanceName, Executor executor, ServiceConnection conn) {
-        return super.bindIsolatedService(service, flags, instanceName, executor, conn);
-    }
-
-    public static void gtr(){}
-
-    @Override
-    public void triggerSearch(String query, @Nullable Bundle appSearchData) {
-        super.triggerSearch(query, appSearchData);
-    }
 }
