@@ -54,7 +54,6 @@ public class SportsListAdapter extends RecyclerView.Adapter<SportsListAdapter.Vi
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                //Toast.makeText(context, "ClickItem "+ items.get(position).getStrSport(), Toast.LENGTH_LONG).show();
                 Intent search = new Intent(context, LeagueActivity.class);
                 search.putExtra("CHOSEN", items.get(position).getStrSport());
                 context.startActivity(search);

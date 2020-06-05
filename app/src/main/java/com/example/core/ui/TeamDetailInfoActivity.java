@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class TeamDetailInfoActivity extends AppCompatActivity {
     TeamDetailInfoViewModel teamDetailInfoViewModel;
     ImageView iv;
     TextView teamName, teamYear, teamSport, teamLeague, teamDescription;
+    Button b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,14 @@ public class TeamDetailInfoActivity extends AppCompatActivity {
                     teamSport.setText(item.getStrSport());
                     teamLeague.setText(item.getStrLeague());
                     teamDescription.setText(item.getStrDescriptionEN());
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent next = new Intent(TeamDetailInfoActivity.this, EventActivity.class);
+                            next.putExtra("id", item.getIdTeam());
+                            startActivity(next);
+                        }
+                    });
                 }
             }
         });
@@ -92,5 +102,6 @@ public class TeamDetailInfoActivity extends AppCompatActivity {
         teamSport=findViewById(R.id.tvSportOfTeamText);
         teamYear=findViewById(R.id.tvYearOfTeamText);
         iv=findViewById(R.id.ivDetails);
+        b = findViewById(R.id.bt_games);
     }
 }

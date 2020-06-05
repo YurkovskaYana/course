@@ -30,6 +30,7 @@ public class Repository {
     private MutableLiveData<List<LeagueItem>>  leagueKind;
     private MutableLiveData<List<EachTeamItem>>  teamsInLeagueKind;
     private MutableLiveData<List<TeamDetailInfoItem>>  teamDetailInfoKind;
+    private MutableLiveData<List<EventItem>>  eventKind;
 
 
     private static Repository instance;
@@ -47,6 +48,7 @@ public class Repository {
         leagueKind = new MutableLiveData<>();
         teamsInLeagueKind = new MutableLiveData<>();
         teamDetailInfoKind = new  MutableLiveData<>();
+        eventKind = new  MutableLiveData<>();
     }
 
     public LiveData<List<SportItem>> getSportsKind() {
@@ -63,6 +65,10 @@ public class Repository {
 
     public LiveData<List<TeamDetailInfoItem>> getTeamDetailInfoKind() {
         return teamDetailInfoKind;
+    }
+
+    public LiveData<List<EventItem>> getEventKind() {
+        return eventKind;
     }
 
 
@@ -157,5 +163,51 @@ public class Repository {
             }
         });
     }
+
+    public void callApiAllEvents(String id){
+        Call<ResponseEvents> api=mApi.getEvents(id);
+        api.enqueue(new Callback<ResponseEvents>() {
+            @Override
+            public void onResponse(Call<ResponseEvents> call, Response<ResponseEvents> response) {
+                if (response.isSuccessful()){
+                    List<EventItem> events = new ArrayList<>(response.body().getEvent());
+                    eventKind.postValue(events);
+                }else {
+                    String error = String.valueOf(response.errorBody());
+                    Log.e(TAG, "callApiAllEv: " + error);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseEvents> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.toString());
+            }
+        });
+    }
+
+    public void callApiLookupItem(String id, final ImageView ivteam) {
+
+        Call<ResponseLookupTeam> api=mApi.getLookupTeam(id);
+
+        api.enqueue(new Callback<ResponseLookupTeam>() {
+            @Override
+            public void onResponse(Call<ResponseLookupTeam> call, Response<ResponseLookupTeam> response) {
+                if (response.isSuccessful()){
+                    Picasso.get()
+                            .load(response.body().getTeams().get(0).getStrTeamBadge())
+                            .into(ivteam);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseLookupTeam> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+
+
 
 }

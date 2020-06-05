@@ -3,6 +3,8 @@ package com.example.core.data.api;
 import com.example.core.data.ResponseAllLeague;
 import com.example.core.data.ResponseAllSports;
 import com.example.core.data.ResponseEachTeamForLeg;
+import com.example.core.data.ResponseEvents;
+import com.example.core.data.ResponseLookupTeam;
 import com.example.core.data.ResponseTeamDetailInfo;
 
 import retrofit2.Call;
@@ -16,6 +18,8 @@ public interface ApiInterface {
     @GET("all_sports.php")
     Call<ResponseAllSports> getAllSpots();
 
+    @GET("lookupteam.php?")
+    Call<ResponseLookupTeam> getLookupTeam(@Query("id") String id);
 
     /*@GET("eventspastleague.php?")
     Call<ResponseAllEvents> getAllEvent(@Query("id") String id);*/
@@ -25,4 +29,7 @@ public interface ApiInterface {
 
     @GET("search_all_teams.php?")
     Call<ResponseEachTeamForLeg> getTeamsInLeague(@Query("s") String kindOfSportForQuery, @Query("c") String country);
+
+    @GET("eventslast.php?")
+    Call<ResponseEvents> getEvents(@Query("id") String id);
 }
