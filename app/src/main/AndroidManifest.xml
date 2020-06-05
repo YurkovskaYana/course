@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.TeamDetailInfoActivity"></activity>
-        <activity android:name=".ui.TeamsInLeagueActivity" />
-        <activity android:name=".ui.LeagueActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.AuthorizationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.RegistrationActivity" />
+        <activity android:name=".ui.TeamDetailInfoActivity"/>
+        <activity android:name=".ui.TeamsInLeagueActivity" />
+        <activity android:name=".ui.LeagueActivity" />
+        <activity android:name=".ui.MainActivity"/>
     </application>
 
 </manifest>

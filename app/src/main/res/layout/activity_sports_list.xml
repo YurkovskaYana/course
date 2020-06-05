@@ -7,16 +7,6 @@
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Choose a sport in which you are interested in"
-        android:textColor="#000000"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:paddingTop="8dp"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewSportsList"
         android:layout_width="match_parent"

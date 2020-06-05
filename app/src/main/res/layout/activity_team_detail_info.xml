@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ui.TeamDetailInfoActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="-98dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,47 +23,46 @@
                 android:id="@+id/ivDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="15dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tvNameOfTeam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Team: "
-                android:textSize="18sp"
                 android:textColor="#000000"
-                android:id="@+id/tvNameOfTeam"
-                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivDetails"/>
+                app:layout_constraintTop_toBottomOf="@+id/ivDetails" />
 
             <TextView
+                android:id="@+id/tvNameOfTeamText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Unknown information"
-                android:textSize="18sp"
                 android:textColor="#000000"
-                tools:layout_editor_absoluteX="58dp"
-                tools:layout_editor_absoluteY="130dp"
-                android:id="@+id/tvNameOfTeamText"
-                tools:ignore="MissingConstraints"
-                app:layout_constraintHorizontal_bias="0.2"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintStart_toStartOf="@+id/tvNameOfTeam"
                 app:layout_constraintTop_toBottomOf="@+id/ivDetails"
-                />
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="58dp"
+                tools:layout_editor_absoluteY="130dp" />
 
             <TextView
                 android:id="@+id/tvYearOfTeam"
@@ -81,50 +81,50 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvNameOfTeam" />
 
             <TextView
+                android:id="@+id/tvYearOfTeamText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Unknown information"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="18sp"
+                android:text="Unknown information"
                 android:textColor="#000000"
-                app:layout_constraintHorizontal_bias="0.6"
-                android:id="@+id/tvYearOfTeamText"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toStartOf="@+id/tvYearOfTeam"
-                app:layout_constraintTop_toBottomOf="@+id/tvNameOfTeam"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvNameOfTeam" />
 
             <TextView
+                android:id="@+id/tvSportOfTeam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Sport: "
-                android:textSize="18sp"
                 android:textColor="#000000"
-                android:id="@+id/tvSportOfTeam"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvYearOfTeam"
-                android:layout_marginLeft="5dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvYearOfTeam" />
 
             <TextView
+                android:id="@+id/tvSportOfTeamText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Unknown information"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="18sp"
+                android:layout_marginBottom="10dp"
+                android:text="Unknown information"
                 android:textColor="#000000"
-                android:id="@+id/tvSportOfTeamText"
-                app:layout_constraintHorizontal_bias="0.2"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintStart_toStartOf="@+id/tvSportOfTeam"
-                app:layout_constraintTop_toBottomOf="@+id/tvYearOfTeam"
-                android:layout_marginBottom="10dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvYearOfTeam" />
 
             <TextView
                 android:id="@+id/tvLegOfTeam"
@@ -138,53 +138,52 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvSportOfTeam"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvSportOfTeam" />
 
             <TextView
                 android:id="@+id/tvLegOfTeamText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Unknown information"
-                app:layout_constraintHorizontal_bias="0.3"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:layout_marginLeft="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSportOfTeam" />
 
             <TextView
+                android:id="@+id/tvDescriptionOfTeam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description of a Team: "
-                android:textSize="18sp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:text="Description of a Team: "
                 android:textColor="#000000"
-                android:id="@+id/tvDescriptionOfTeam"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvLegOfTeam"
-                android:layout_marginLeft="5dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvLegOfTeam" />
 
             <TextView
+                android:id="@+id/tvDescriptionOfTeamText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No team description"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="18sp"
+                android:layout_marginBottom="10dp"
+                android:text="No team description"
                 android:textColor="#000000"
-                android:id="@+id/tvDescriptionOfTeamText"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionOfTeam"
-                android:layout_marginBottom="10dp"/>
-
+                app:layout_constraintTop_toBottomOf="@+id/tvDescriptionOfTeam" />
 
 
 

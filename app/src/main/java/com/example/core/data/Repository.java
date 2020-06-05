@@ -14,6 +14,7 @@ import com.example.core.ui.TeamsInLeagueActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -93,6 +94,12 @@ public class Repository {
             public void onResponse(Call<ResponseAllLeague> call, Response<ResponseAllLeague> response) {
                 if (response.isSuccessful()){
                     List<LeagueItem> leagueItems = new ArrayList<>(response.body().getLeague());
+                    for (Iterator<LeagueItem> it = leagueItems.iterator(); it.hasNext(); ) {
+                        LeagueItem item = it.next();
+                        if (item.getStrCountry().equals("Europe")) {
+                            it.remove();
+                        }
+                    }
                     leagueKind.postValue(leagueItems);
                 }else {
                     String error = String.valueOf(response.errorBody());

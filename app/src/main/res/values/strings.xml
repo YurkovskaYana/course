@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Core</string>
+    <string name="app_name">SportDb</string>
+
+
+    <string name="reg_email_input_error">Email is incorrect</string>
+    <string name="reg_password_input_error">Password must contain at least one symbol</string>
+    <string name="reg_password_again_input_error">Passwords must be equal</string>
+    <string name="reg_unknown_user">Unregistered user</string>
+    <string name="reg_congratulation">Successfully registered.</string>
+
+
+    <string name="se_email_input_error">Email is incorrect</string>
+    <string name="se_password_input_error">New password must contain at least one symbol</string>
+    <string name="se_password_again_input_error">Passwords must be equal</string>
+
+    <string name="se_equals_email_input_error">The email you entered belongs to another user</string>
+    <string name="se_congratulation">Congratulations you have been successfully changed your password</string>
+
 </resources>
